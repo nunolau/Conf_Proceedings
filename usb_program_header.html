@@ -1,0 +1,140 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>
+  YYYY IEEE International Conference on SOMETHING (CONF)
+  </title>
+<style type="text/css">
+    h1	              {
+                       font-family: tahoma, verdana, arial, sans-serif; 
+                       margin: 0.5cm 1cm 0.5cm 1cm;
+                      }
+    div.chapternumber {
+                       font-family: tahoma, verdana, arial, sans-serif; 
+                       font-size: 2em;
+                       margin: 1cm 1cm 1cm 1cm;
+                      } 
+    div.daytitle  {
+                       padding-left: 0em;  
+                       font-family: tahoma, verdana, arial, sans-serif; 
+                       font-size: 1.8em;
+                       font-weight: bold;
+		               line-height:1.5em;
+                       margin: 0.5cm 0 0.4cm 1cm;
+                       border-top-style:solid;
+                       border-bottom-style:solid;
+                      } 
+    div.chaptertitle  {
+                       font-family: tahoma, verdana, arial, sans-serif; 
+                       font-size: 1.5em;
+		               line-height:1.5em;
+                       margin: 0.1cm 1cm 0.3cm 1cm;
+                      } 
+    div.sessiontitle  {
+                       font-family: tahoma, verdana, arial, sans-serif; 
+                       font-size: 1.5em;
+		               line-height:1.5em;
+                       margin: 0.5cm 0cm 0.4cm 1cm;
+                      } 
+    span.title        {
+                       display: block; 
+                       font-family: tahoma, verdana, arial, sans-serif; 
+                       font-style:italic;
+                       font-size: 1em;
+		               line-height:1.2em;
+                       margin: 0.5cm 0 0.2cm 2cm;
+                      } 
+    span.author       {
+                       display: block; 
+                       font-family: tahoma, verdana, arial, sans-serif; 
+                       font-size: 1em;
+		               line-height:1em;
+                       margin: 0 0 0.2cm 2cm;
+                      } 
+    span.pages        {
+                       display: block; 
+                       font-family: tahoma, verdana, arial, sans-serif; 
+                       font-size: 0.8em;
+		               line-height:0.9em;
+                       margin: 0 0 0.25cm 2.5cm;
+                      } 
+    span.pdflink      {
+                       display: block; 
+                       font-family: tahoma, verdana, arial, sans-serif; 
+                       font-size: 0.8em;
+		               line-height:0.9em;
+                       margin: 0 0 0.25cm 2.5cm;
+                      } 
+    div.paperlist     {
+                        padding-left: 2cm;  
+                      } 
+</style>
+<script>
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+  var scheds = document.getElementsByName("schedule");
+  for (h = 0; h < scheds.length; h++) {
+      var hour  = scheds[h].getAttribute("hour");
+      var splt1 = hour.split("-");
+      var init  = splt1[0].split(":");
+      var hi    = init[0]
+      var mi    = init[1]
+      var endt  = splt1[1].split(":");
+      var hf    = endt[0]
+      var mf    = endt[1]
+      scheds[h].innerHTML = (parseInt(hi)+parseInt(x)) + ":" + mi + "-" + (parseInt(hf)+parseInt(x))+":"+mf;
+  }
+}
+</script>
+<body onload="myFunction()">
+<center>
+<table width="1150">
+<tr>
+<td>
+<img src="images/CONF_header.png" alt="CONF YYYY" border=0"/>
+<h1>
+YYYY IEEE International Conference on SOMETHING (CONF)
+</h1>
+<div class="chaptertitle" >
+CITY, COUNTRY, MONTH DD-DD, YYYY
+</div>
+<div class="chaptertitle" >
+</div>
+<div class="chaptertitle" >
+  Editors: EDITORS
+</div>
+
+<br/>
+<h1><a href="index.html">Home Page</a></h1>
+<br/>
+<h1>Conference Program</h1>
+<br/>
+<div class="sessiontitle"> Select your Time Zone: <select id="mySelect" onchange="myFunction()">
+  <option value="-8">Pacific Daylight Time (PDT - UTC-7)</option>
+  <option value="-7">Mountain Daylight Time (MDT - UTC-6)</option>
+  <option value="-6">Central Daylight Time (CDT - UTC-5)</option>
+  <option value="-6">Peru Time (PET - UTC-5)</option>
+  <option value="-5">Eastern Daylight Time (EDT - UTC-4)</option>
+  <option value="-5">Amazon Time (AMT - UTC-4)</option>
+  <option value="-4">Atlantic Daylight Time (ADT - UTC-3)</option>
+  <option value="-4">Brasilia Time (BRT - UTC-3)</option>
+  <option value="-3">Western Greenland Summer Time (WGST - UTC-2)</option>
+  <option value="-2">East Greenland Time (EGT - UTC-1)</option>
+  <option value="-1">Azores Summer Time (AZOST - UTC+0)</option>
+  <option value="0" selected >Western European Summer Time (WEST - UTC+1)</option>
+  <option value="1">Central European Summer Time (CEST - UTC+2)</option>
+  <option value="2">Eastern European Summer Time (EEST - UTC+3)</option>
+  <option value="3">Arabia Daylight Time (ADT - UTC+4)</option>
+  <option value="4">Echo Time Zone (E - UTC+5)</option>
+  <option value="5">Foxtrot Time Zone (F - UTC+6)</option>
+  <option value="6">Indochina Time Zone (ICT - UTC+7)</option>
+  <option value="7">China Standard Time Zone (CST - UTC+8)</option>
+  <option value="8">Japan Standard Time Zone (JST - UTC+9)</option>
+</select>
+</div>
+<table width="800">
+<tr>
+<td><span class="title"><b>Date</b></span></td>
+<td><a href="#day1"><span class="title">MONTH DD, YYYY</span></a></td>
+<td><a href="#day2"><span class="title">MONTH DD, YYYY</span></a></td>
+</tr>
+</table>

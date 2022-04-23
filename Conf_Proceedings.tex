@@ -1,0 +1,430 @@
+\documentclass[letterpaper,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\renewcommand{\rmdefault}{ptm}
+%\usepackage{mtpro2}
+\usepackage{setspace}
+\usepackage{multicol,caption}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{authorindex}
+\usepackage{tocloft}
+\usepackage{tabularx}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+\newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+\usepackage{fancyhdr}
+\lhead{}
+\chead{}
+\rhead{}
+\cfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.0pt}
+\usepackage{pdfpages}
+\includepdfset{pagecommand=\thispagestyle{fancy}}
+%\usepackage[top=0.9in, bottom=0.8in, left=0.6in, right=0.6in, headheight=0.3in]{geometry}
+\usepackage[top=1.0in, bottom=0.8in, left=0.63in, right=0.6in, headheight=0.44in, headsep=0.21in]{geometry}
+%\usepackage[top=0.9in, bottom=0.8in, left=0.65in, right=0.6in, headheight=0.3in]{geometry}
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+\begin{document}
+\frontmatter
+%COVER PAGE
+% COVER PAGE in pdf file
+%\pagestyle{empty}
+%\includepdf[addtotoc={1,chapter,60,Cover,cover}]{Conf_Cover.pdf}
+% COVER PAGE in latex
+\pagestyle{empty}
+\null\vspace{5cm}
+\begin{center}
+\Huge YYYY IEEE International Conference on SOMETHING
+(ACRONYM)
+
+\vspace{2cm}
+\Large
+Edited by:
+
+EDITORS
+
+\vspace{2cm}
+\large
+MONTH DD-DD, YYYY
+
+\vspace{2cm}
+
+CITY, COUNTRY
+
+\vspace{5cm}
+
+XPLORE COMPLIANT ISBN: XXX-X-XXXX-XXXX-X
+
+XPLORE COMPLIANT IEEE Catalog Number: CFPXXXXX-XXX
+
+\end{center}
+\newpage
+%TITLE PAGE
+\pagestyle{plain}
+\null\vspace{5cm}
+\phantomsection
+\addcontentsline{toc}{chapter}{Title page}
+\begin{center}
+\Huge YYYY IEEE International Conference on SOMETHING
+(ACRONYM)
+
+\vspace{2cm}
+\Large
+Edited by:
+
+EDITORS
+
+\vspace{2cm}
+\large
+MONTH DD-DD, YYYY
+
+\vspace{2cm}
+
+CITY, COUNTRY
+
+\vspace{5cm}
+
+XPLORE COMPLIANT ISBN: XXX-X-XXXX-XXXX-X
+
+XPLORE COMPLIANT IEEE Catalog Number: CFPXXXXX-XXX
+
+\end{center}
+\newpage
+%COPYRIGHT PAGE
+\begin{center}
+\phantomsection
+\addcontentsline{toc}{chapter}{Copyright page}
+% add pdf header if adequate
+%\includegraphics[width=\textwidth]{Conf_header.pdf}
+\null\vspace{7.0cm}
+\end{center}
+
+\noindent {\bfseries Title:} YYYY IEEE International Conference on SOMETHING (ACRONYM)
+
+\noindent {\bfseries Editors:} EDITORS
+
+\noindent {\bfseries XPLORE COMPLIANT ISBN:} XXX-X-XXXX-XXXX-X
+
+\noindent {\bfseries XPLORE COMPLIANT IEEE Catalog Number:} CFPXXXXX-XXX
+
+
+\vspace{0.5cm}
+
+\noindent Copyright \textcopyright YYYY by the Institute of Electrical and Electronics Engineers, Inc. All rights reserved.
+
+\noindent Copyright and Reprint Permission: Abstracting is permitted with credit to the source. Libraries are permitted to photocopy beyond
+the limit of U.S. copyright law for private use of patrons those articles in this volume that carry a code at the bottom of the first page,
+provided the per-copy fee indicated in the code is paid through Copyright Clearance Center, 222 Rosewood Drive, Danvers, MA
+01923. 
+
+\noindent For reprint or republication permission, email to IEEE Copyrights Manager at pubs-permissions@ieee.org. 
+
+\noindent All rights reserved. Copyright \textcopyright YYYY by IEEE.
+
+\vspace{1.5cm}
+
+{\Large \bfseries Sponsors:}
+
+\vspace{-0.3cm}
+\includegraphics[scale=0.3]{sponsor1.png}
+\hspace{0.8cm}
+\includegraphics[scale=0.3]{sponsor2.png}
+\hspace{0.8cm}
+\includegraphics[scale=0.28]{sponsor3.png}
+\null\vspace{0.7cm}
+
+%%{\Large \bfseries Patrons:}
+%%
+%%%\vspace{0.2cm}
+%%%\includegraphics[scale=0.2]{patron1.png}
+%%%\hspace{0.2cm}
+%%%\includegraphics[scale=0.5]{patron2.png}
+%%\null\vspace{0.5cm}
+%%
+{\Large \bfseries Institutions:}
+
+\vspace{0.2cm}
+\includegraphics[scale=0.3]{institution1.png}
+\hspace{0.8cm}
+\includegraphics[scale=0.14]{institution2.png}
+\hspace{0.8cm}
+\includegraphics[scale=0.085]{institution3.png}
+\hspace{0.8cm}
+\includegraphics[scale=0.56]{institution4.png}
+
+\newpage
+\cfoot{\small \textbf{\thepage}}
+\pagestyle{fancy}
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{\small \textbf{YYYY IEEE International Conference on \newline
+       SOMETHING (ACRONYM)\newline
+       MONTH DD-DD, CITY, COUNTRY}}
+\fancyfoot[C]{\small \textbf{\thepage}} % except the center
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+\lhead{\small \textbf{YYYY IEEE International Conference on \newline
+       SOMETHING (ACRONYM)\newline
+       MONTH DD-DD, CITY, COUNTRY}}
+
+\newpage
+%WELCOME PAGE
+\null\vspace{0.5cm}
+\phantomsection
+\addcontentsline{toc}{chapter}{Welcome Message}
+\begin{center}
+{\LARGE \bfseries Welcome Message}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{onehalfspacing}
+{
+\setlength{\parskip}{0.25cm} 
+
+Welcome to the YYYY IEEE International Conference on SOMETHING (ACRONYM), bla bla bla 
+
+Thank you all for participating in this conference hoping you enjoy and feel it as a highly productive and sociable event.
+
+}
+
+\vspace{0.6cm}
+
+EDITOR1
+
+EDITOR2
+ 
+\end{onehalfspacing}
+\newpage
+
+%ORGANIZATION PAGE
+{\LARGE \bfseries ACRONYM'YYYY Committees}
+\vspace{0.5cm}
+\phantomsection
+\addcontentsline{toc}{chapter}{ACRONYM'YYYY Committees}
+
+{\Large Organizing Committee}
+\vspace{0.2cm}
+
+\begin{tabular}{lll}
+ORG1        & University of XXXX  & COUNTRY\\
+ORG2        & University of XXXX  & COUNTRY\\
+\end{tabular}
+
+\vspace{0.5cm}
+
+{\Large Local Organizing Committee}
+\vspace{0.2cm}
+\begin{tabular}{lll}
+ORG1        & University of XXXX  & COUNTRY\\
+ORG2        & University of XXXX  & COUNTRY\\
+\end{tabular}
+
+\vspace{0.5cm}
+
+{\Large Steering Committee}
+\vspace{0.2cm}
+
+\begin{tabular}{lll}
+STEER1        & University of XXXX  & COUNTRY\\
+STEER2        & University of XXXX  & COUNTRY\\
+\end{tabular}
+
+
+\vspace{0.5cm}
+
+{\Large International Program Committee}
+\vspace{0.2cm}
+
+\begin{minipage}[t]{.45\textwidth}
+\begin{tabular}{ll}
+PC1 & COUNTRY\\
+PC2 & COUNTRY\\
+\end{tabular}
+\end{minipage}
+\hspace{0.2cm}
+\begin{minipage}[t]{.45\textwidth}
+\begin{tabular}{ll}
+PC3 & COUNTRY\\
+PC4 & COUNTRY\\
+\end{tabular}
+\end{minipage}
+
+%\newpage
+%\begin{minipage}[t]{.45\textwidth}
+%\vspace{0pt}   % so that top of minipages are aligned
+%\begin{tabular}{ll}
+%PC1 & COUNTRY\\
+%PC2 & COUNTRY\\
+%\end{tabular}
+%\end{minipage}
+%\hspace{0.2cm}
+%\begin{minipage}[t]{.45\textwidth}
+%\vspace{0pt}   % so that top of minipages are aligned
+%\begin{tabular}{ll}
+%PC1 & COUNTRY\\
+%PC2 & COUNTRY\\
+%\end{tabular}
+%\end{minipage}
+
+\vspace{0.5cm}
+
+%\newpage
+
+{\Large Reviewers}
+\vspace{0.2cm}
+
+\begin{minipage}[t]{0.3\textwidth}
+\vspace{0pt}   % so that top of minipages are aligned
+\begin{tabular}{l}
+REV1\\
+REV2\\
+\end{tabular}
+\end{minipage}
+\hspace{0.1cm}
+\begin{minipage}[t]{0.3\textwidth}
+\vspace{0pt}   % so that top of minipages are aligned
+\begin{tabular}{l}
+REV1\\
+REV2\\
+\end{tabular}
+\end{minipage}
+\hspace{0.1cm}
+\begin{minipage}[t]{0.3\textwidth}
+\vspace{0pt}   % so that top of minipages are aligned
+\begin{tabular}{l}
+REV1\\
+REV2\\
+\end{tabular}
+\end{minipage}
+
+\newpage
+%PROGRAM PAGE
+%\includepdf[pages=1,trim=0cm 1.5cm 0cm 3cm,offset=0cm -0.75cm,clip=true,noautoscale,scale=0.98, addtotoc={1,chapter,60,Conference Program,program}]{Program.pdf}
+%\includepdf[pages=2-,trim=0cm 1.5cm 0cm 2cm,offset=0cm -0.30cm,clip=true,noautoscale,scale=0.98, addtotoc={1,chapter,60,Conference Program,program}]{Program.pdf}
+\input{Conf_Program.tex}
+\newpage
+%TABLEOFCONTENTS PAGE
+\setcounter{tocdepth}{0}
+\phantomsection
+\addcontentsline{toc}{chapter}{Table of Contents}
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+\thispagestyle{fancy}
+\newpage
+%MAINMATTER
+\mainmatter
+\setcounter{secnumdepth}{-2}
+%INVITED SPEAKER 1
+\null
+\phantomsection
+\addcontentsline{toc}{chapter}{\emph{TITLE} \newline KEYNOTE AUTHOR}
+\aimention{KEYNOTE AUTHOR}
+\thispagestyle{fancy}
+\begin{center}
+\Huge{TITLE}
+
+\vspace {1.1cm}
+
+{\large KEYNOTE AUTHOR
+
+AFFILLIATION
+
+ADDRESS
+
+Email: EEEE@XXXX
+
+}
+\end{center}
+
+\vspace{0.5cm}
+
+
+\begin{multicols}{2}
+\begin{center}
+\textsc{I. Short Bio}
+\end{center}
+
+Dr. bla bla bla
+
+\begin{center}
+\textsc{II. Abstract}
+\end{center}
+
+Bla bla bla
+
+%\begin{Figure}
+%   \includegraphics[width=\linewidth]{fig1.png}
+%   \captionof{figure}{caption.}
+%   \label{fig:keynote_fig}
+%\end{Figure}
+
+\end{multicols}
+
+\newpage
+%INVITED SPEAKER 2
+%\aimention{KEYNOTE AUTHOR}
+%\lhead{\small \textbf{YYYY IEEE International Conference on \newline
+%SOMETHING (ACRONYM)\newline
+%MONTH DD-DD, CITY, COUNTRY\newline \null}}
+%\includepdf[pages=1-,offset=0.0cm -1.15cm,scale=1,addtotoc={1,chapter,60,{ \emph{TITLE} \newline KEYNOTE AUTHOR },keynote_author}]{keynote_author/paper_author.pdf}
+%%\null
+%%\phantomsection
+%%\addcontentsline{toc}{chapter}{\emph{Title} \newline Keynote Author}
+%%\aimention{Keynote Author}
+%%\thispagestyle{fancy}
+%%\begin{center}
+%%\Huge{TITLE}
+%%
+%%\vspace {1.1cm}
+%%
+%%{\large KEYNOTE AUTHOR 
+%%
+%%AFFILLIATION
+%%
+%%ADDRESS
+%%
+%%COUNTRY
+%%
+%%Email: EEEE@XXXX
+%%
+%%}
+%%\end{center}
+%%
+%%\vspace{0.5cm}
+%%
+%%\begin{multicols}{2}
+%%\begin{center}
+%%\textsc{I. Short Bio}
+%%\end{center}
+%%
+%%Dr. bla bla bla
+%%
+%%
+%%\begin{center}
+%%\textsc{II. Abstract}
+%%\end{center}
+%%
+%%Bla bla bla 
+%%
+%%\nocite{*}
+%%\bibliographystyle{unsrt}
+%%\renewcommand{\bibname}{}
+%%\bibliography{Conf_Proceedings}
+%%\end{multicols}
+%%
+%%\newpage
+%PAPERS
+\input{Conf_Papers.tex}
+%AUTHOR INDEX
+\chapter{Author Index}
+\begin{multicols}{2}
+\printauthorindex
+\end{multicols}
+\thispagestyle{fancy}
+\end{document}
