@@ -24,7 +24,7 @@ BEGIN	{
            curday=1
 
 
-           system("cat usb_program_header.html");
+           system(". ./config.txt; sed s/\\${conferencename}/\"${conferencename}\"/ usb_program_header.html | sed s/\\${acronym}/\"${acronym}\"/ | sed s/\\${city}/\"${city}\"/ | sed s/\\${monthday}/\"${monthday}\"/ | sed s/\\${country}/\"${country}\"/ | sed s/\\${isbn}/\"${isbn}\"/ | sed s/\\${catalognumber}/\"${catalognumber}\"/ | sed s/\\${year}/\"${year}\"/");
 
            print "<table width=\"1100\">"
 }
@@ -82,5 +82,5 @@ BEGIN	{
 
 END 	    {
                print "</table>"
-               system("cat usb_footer.html")
+               system(". ./config.txt; sed s/\\${conferencename}/\"${conferencename}\"/ usb_footer.html | sed s/\\${acronym}/\"${acronym}\"/ | sed s/\\${city}/\"${city}\"/ | sed s/\\${monthday}/\"${monthday}\"/ | sed s/\\${country}/\"${country}\"/ | sed s/\\${isbn}/\"${isbn}\"/ | sed s/\\${catalognumber}/\"${catalognumber}\"/ | sed s/\\${year}/\"${year}\"/");
 	        }

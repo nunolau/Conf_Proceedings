@@ -28,6 +28,22 @@
 \newenvironment{Figure}
   {\par\medskip\noindent\minipage{\linewidth}}
   {\endminipage\par\medskip}
+
+% read configuration file and create latex variables
+\newread\varsfile
+\def\assignvar#1="#2"\relax{\expandafter\gdef\csname #1\endcsname{#2}}
+\openin\varsfile=config.txt
+{\endlinechar=-1
+\loop
+\ifeof\varsfile\else
+\read\varsfile to \tmp
+\ifx\tmp\empty\else
+\expandafter\assignvar\tmp\relax
+\fi
+\repeat
+}
+\closein\varsfile
+
 \begin{document}
 \frontmatter
 %COVER PAGE
@@ -38,8 +54,8 @@
 \pagestyle{empty}
 \null\vspace{5cm}
 \begin{center}
-\Huge YYYY IEEE International Conference on SOMETHING
-(ACRONYM)
+\Huge \year\ \conferencename\ 
+(\acronym)
 
 \vspace{2cm}
 \Large
@@ -49,17 +65,17 @@ EDITORS
 
 \vspace{2cm}
 \large
-MONTH DD-DD, YYYY
+\monthday, \year
 
 \vspace{2cm}
 
-CITY, COUNTRY
+\city, \country
 
 \vspace{5cm}
 
-XPLORE COMPLIANT ISBN: XXX-X-XXXX-XXXX-X
+XPLORE COMPLIANT ISBN: \isbn
 
-XPLORE COMPLIANT IEEE Catalog Number: CFPXXXXX-XXX
+XPLORE COMPLIANT IEEE Catalog Number: \catalognumber
 
 \end{center}
 \newpage
@@ -69,8 +85,8 @@ XPLORE COMPLIANT IEEE Catalog Number: CFPXXXXX-XXX
 \phantomsection
 \addcontentsline{toc}{chapter}{Title page}
 \begin{center}
-\Huge YYYY IEEE International Conference on SOMETHING
-(ACRONYM)
+\Huge \year\ \conferencename\ 
+(\acronym)
 
 \vspace{2cm}
 \Large
@@ -80,17 +96,17 @@ EDITORS
 
 \vspace{2cm}
 \large
-MONTH DD-DD, YYYY
+\monthday, \year
 
 \vspace{2cm}
 
-CITY, COUNTRY
+\city, \country
 
 \vspace{5cm}
 
-XPLORE COMPLIANT ISBN: XXX-X-XXXX-XXXX-X
+XPLORE COMPLIANT ISBN: \isbn
 
-XPLORE COMPLIANT IEEE Catalog Number: CFPXXXXX-XXX
+XPLORE COMPLIANT IEEE Catalog Number: \catalognumber
 
 \end{center}
 \newpage
@@ -103,18 +119,18 @@ XPLORE COMPLIANT IEEE Catalog Number: CFPXXXXX-XXX
 \null\vspace{7.0cm}
 \end{center}
 
-\noindent {\bfseries Title:} YYYY IEEE International Conference on SOMETHING (ACRONYM)
+\noindent {\bfseries Title:} \year\ \conferencename\ (\acronym)
 
 \noindent {\bfseries Editors:} EDITORS
 
-\noindent {\bfseries XPLORE COMPLIANT ISBN:} XXX-X-XXXX-XXXX-X
+\noindent {\bfseries XPLORE COMPLIANT ISBN:} \isbn
 
-\noindent {\bfseries XPLORE COMPLIANT IEEE Catalog Number:} CFPXXXXX-XXX
+\noindent {\bfseries XPLORE COMPLIANT IEEE Catalog Number:} \catalognumber
 
 
 \vspace{0.5cm}
 
-\noindent Copyright \textcopyright YYYY by the Institute of Electrical and Electronics Engineers, Inc. All rights reserved.
+\noindent Copyright \textcopyright \year\ by the Institute of Electrical and Electronics Engineers, Inc. All rights reserved.
 
 \noindent Copyright and Reprint Permission: Abstracting is permitted with credit to the source. Libraries are permitted to photocopy beyond
 the limit of U.S. copyright law for private use of patrons those articles in this volume that carry a code at the bottom of the first page,
@@ -123,18 +139,18 @@ provided the per-copy fee indicated in the code is paid through Copyright Cleara
 
 \noindent For reprint or republication permission, email to IEEE Copyrights Manager at pubs-permissions@ieee.org. 
 
-\noindent All rights reserved. Copyright \textcopyright YYYY by IEEE.
+\noindent All rights reserved. Copyright \textcopyright \year\ by IEEE.
 
 \vspace{1.5cm}
 
 {\Large \bfseries Sponsors:}
 
 \vspace{-0.3cm}
-\includegraphics[scale=0.3]{sponsor1.png}
+%\includegraphics[scale=0.3]{sponsor1.png}
 \hspace{0.8cm}
-\includegraphics[scale=0.3]{sponsor2.png}
+%\includegraphics[scale=0.3]{sponsor2.png}
 \hspace{0.8cm}
-\includegraphics[scale=0.28]{sponsor3.png}
+%\includegraphics[scale=0.28]{sponsor3.png}
 \null\vspace{0.7cm}
 
 %%{\Large \bfseries Patrons:}
@@ -148,29 +164,29 @@ provided the per-copy fee indicated in the code is paid through Copyright Cleara
 {\Large \bfseries Institutions:}
 
 \vspace{0.2cm}
-\includegraphics[scale=0.3]{institution1.png}
+%\includegraphics[scale=0.3]{institution1.png}
 \hspace{0.8cm}
-\includegraphics[scale=0.14]{institution2.png}
+%\includegraphics[scale=0.14]{institution2.png}
 \hspace{0.8cm}
-\includegraphics[scale=0.085]{institution3.png}
+%\includegraphics[scale=0.085]{institution3.png}
 \hspace{0.8cm}
-\includegraphics[scale=0.56]{institution4.png}
+%\includegraphics[scale=0.56]{institution4.png}
 
 \newpage
 \cfoot{\small \textbf{\thepage}}
 \pagestyle{fancy}
 \fancypagestyle{plain}{%
 \fancyhf{} % clear all header and footer fields
-\fancyhead[L]{\small \textbf{YYYY IEEE International Conference on \newline
-       SOMETHING (ACRONYM)\newline
-       MONTH DD-DD, CITY, COUNTRY}}
+\fancyhead[L]{\small \textbf{\headerlineone\newline
+       \headerlinetwo\newline
+       \headerlinethree}}
 \fancyfoot[C]{\small \textbf{\thepage}} % except the center
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 }
-\lhead{\small \textbf{YYYY IEEE International Conference on \newline
-       SOMETHING (ACRONYM)\newline
-       MONTH DD-DD, CITY, COUNTRY}}
+\lhead{\small \textbf{\headerlineone\newline
+       \headerlinetwo\newline
+       \headerlinethree}}
 
 \newpage
 %WELCOME PAGE
@@ -187,7 +203,7 @@ provided the per-copy fee indicated in the code is paid through Copyright Cleara
 {
 \setlength{\parskip}{0.25cm} 
 
-Welcome to the YYYY IEEE International Conference on SOMETHING (ACRONYM), bla bla bla 
+Welcome to the \year\ \conferencename (\acronym), bla bla bla 
 
 Thank you all for participating in this conference hoping you enjoy and feel it as a highly productive and sociable event.
 
@@ -203,10 +219,10 @@ EDITOR2
 \newpage
 
 %ORGANIZATION PAGE
-{\LARGE \bfseries ACRONYM'YYYY Committees}
+{\LARGE \bfseries \acronym'\year Committees}
 \vspace{0.5cm}
 \phantomsection
-\addcontentsline{toc}{chapter}{ACRONYM'YYYY Committees}
+\addcontentsline{toc}{chapter}{\acronym'\year Committees}
 
 {\Large Organizing Committee}
 \vspace{0.2cm}
@@ -369,9 +385,8 @@ Bla bla bla
 \newpage
 %INVITED SPEAKER 2
 %\aimention{KEYNOTE AUTHOR}
-%\lhead{\small \textbf{YYYY IEEE International Conference on \newline
-%SOMETHING (ACRONYM)\newline
-%MONTH DD-DD, CITY, COUNTRY\newline \null}}
+%\lhead{\small \textbf{\year\ \conferencename\ (\acronym)\newline
+%\monthday, \city, \country\newline \null}}
 %\includepdf[pages=1-,offset=0.0cm -1.15cm,scale=1,addtotoc={1,chapter,60,{ \emph{TITLE} \newline KEYNOTE AUTHOR },keynote_author}]{keynote_author/paper_author.pdf}
 %%\null
 %%\phantomsection

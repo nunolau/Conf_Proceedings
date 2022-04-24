@@ -57,15 +57,15 @@ BEGIN	   {
                            print "\\newpage"
                            print "\\aimention{" authorsand "}"
                            if(header==1) { 
-                                    print "\\lhead{\\small \\textbf{YYYY IEEE International Conference on \\newline"
-                                    print "SOMETHING (ACRONYM)\\newline"
-                                    print "Month DD-DD, CITY, COUNTRY\\newline \\null}}"
+                                    print "\\lhead{\\small \\textbf{\\headerlineone\\newline"
+                                    print "\\headerlinetwo\\newline"
+                                    print "\\headerlinethree\\newline \\null}}"
                            }
                            if(header==2) { 
-                                    print "\\lhead{\\small \\textbf{YYYY IEEE International Conference on SOMETHING (ACRONYM)\\newline"
-                                    print "Month DD-DD, CITY, COUNTRY\\newline \\null}}"
+                                    print "\\lhead{\\small \\textbf{\\year\\ \\conferencename\\ (\\acronym)\\newline"
+                                    print "\\headerlinethree\\newline \\null}}"
                            }
-                           print "\\lfoot{\\small \\textbf{XXX-X-XXXX-XXXX-X/XX/\\$XX.00 \\textcopyright YYYY 21 IEEE}}"
+                           print "\\lfoot{\\small \\textbf{\\isbn/\\$XX.00 \\textcopyright \\year\\  22 IEEE}}"
                            print "\\includepdf[pages=1,offset=" offsetx "cm " offsety "cm,scale=" scale ",addtotoc={1,chapter,60,{ \\emph{" title "} \\newline " authors "},paper" subid "}]{" filename "}"
                            print "\\lfoot{}"
                            if(crule==1)

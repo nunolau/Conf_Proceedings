@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>
-  YYYY IEEE International Conference on SOMETHING (CONF)
+  ${year} ${conferencename} (${acronym})
   </title>
 <style type="text/css">
     h1	              {
@@ -65,10 +65,10 @@
 <td>
 <img src="images/CONF_header.png" alt="CONF YYYY" border=0"/>
 <h1>
-YYYY IEEE International Conference on SOMETHING (CONF)
+${year} ${conferencename} (${acronym})
 </h1>
 <div class="chaptertitle" >
-CITY, COUNTRY, MONTH DD-DD, YYYY
+${city}, ${country}, ${monthday}, ${year}
 </div>
 <div class="chaptertitle" >
 </div>
@@ -84,7 +84,7 @@ CITY, COUNTRY, MONTH DD-DD, YYYY
    XPLORE COMPLIANT ISBN: 
   </td>
   <td valign="top">
- XXX-X-XXXX-XXXX-X
+ ${isbn}
   </td>
 </tr>
 <tr>
@@ -92,7 +92,7 @@ CITY, COUNTRY, MONTH DD-DD, YYYY
  XPLORE COMPLIANT IEEE Catalog Number:
   </td>
   <td valign="top">
- CFPXXXXX-XXX
+${catalognumber}
   </td>
 </tr>
 <tr>
@@ -116,7 +116,7 @@ CITY, COUNTRY, MONTH DD-DD, YYYY
 <table>
 <tr>
   <td valign="top">
-Copyright ©YYYY by the Institute of Electrical and Electronics Engineers, Inc. All rights reserved.
+Copyright ©${year} by the Institute of Electrical and Electronics Engineers, Inc. All rights reserved.
 <br/>
 Copyright and Reprint Permission: Abstracting is permitted with credit to the source. Libraries are permitted to photocopy beyond
 the limit of U.S. copyright law for private use of patrons those articles in this volume that carry a code at the bottom of the first page,
@@ -125,7 +125,7 @@ provided the per-copy fee indicated in the code is paid through Copyright Cleara
 <br/>
 For reprint or republication permission, email to IEEE Copyrights Manager at pubs-permissions@ieee.org. 
 <br/>
-All rights reserved. Copyright ©YYYY by IEEE.
+All rights reserved. Copyright ©${year} by IEEE.
   </td>
 </tr>
 </table>
@@ -142,7 +142,7 @@ All rights reserved. Copyright ©YYYY by IEEE.
 <!--
 <a href="files/Conf_Proceedings.pdf">
 <img vspace="2" hspace="2" src="images/CONF_cover.png" width="400"
-     alt="YYYY IEEE International Conference on SOMETHING (CONF) cover" border="0"/>
+     alt="${year} ${conferencename} (${acronym}) cover" border="0"/>
 </a>
 -->
 
